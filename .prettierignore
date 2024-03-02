@@ -6,3 +6,4 @@ public
 # Ignore all HTML files:
 **/*.html
 **/*.css
+**/*.png

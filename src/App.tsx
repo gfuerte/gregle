@@ -1,12 +1,19 @@
 import React, { Fragment } from 'react'
 import { NavigationBar } from './widgets/navigation/NavigationBar'
 
+import Box from '@mui/material/Box'
+
 function App() {
     return (
-        <Fragment>
+        <Box
+            sx={{
+                width: '100%',
+                height: '100vh',
+                backgroundColor: '#F4F2EE',
+            }}
+        >
             <NavigationBar />
-            <h1>Gregle</h1>
-        </Fragment>
+        </Box>
     )
 }
 
