@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { NavigationBar } from './widgets/navigation/NavigationBar'
+import { NavigationBar } from './widgets/nav/NavigationBar'
 
 import Box from '@mui/material/Box'
 
