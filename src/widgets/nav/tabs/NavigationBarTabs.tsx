@@ -3,13 +3,13 @@ import { useNavigate } from 'react-router-dom'
 
 import Avatar from '@mui/material/Avatar'
 import Box from '@mui/material/Box'
+import Divider from '@mui/material/Divider'
 import HomeIcon from '@mui/icons-material/Home'
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt'
+import SettingsIcon from '@mui/icons-material/Settings'
 import Tab from '@mui/material/Tab'
 import Tabs from '@mui/material/Tabs'
 import TextsmsIcon from '@mui/icons-material/Textsms'
-
-import Button from '@mui/material/Button'
 
 export const NavigationBarTabs = () => {
     const navigate = useNavigate()
@@ -43,6 +43,8 @@ export const NavigationBarTabs = () => {
                     value="me"
                     sx={tabSx}
                 />
+                <Divider orientation="vertical" flexItem />
+                <Tab icon={<SettingsIcon />} label="Settings" value="settings" sx={tabSx} />
             </Tabs>
         </Box>
     )
