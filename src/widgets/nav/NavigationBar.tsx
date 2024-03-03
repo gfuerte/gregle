@@ -3,16 +3,29 @@ import image from '../../assets/gregle.png'
 import { SearchBar } from './search-bar/SearchBar'
 
 import Box from '@mui/material/Box'
-import Grid from '@mui/material/Unstable_Grid2'
+import Container from '@mui/material/Container'
+import Paper from '@mui/material/Paper'
 import Stack from '@mui/material/Stack'
+import { NavigationBarTabs } from './tabs/NavigationBarTabs'
 
 export const NavigationBar = () => {
     return (
-        <Box height={50} display="flex" sx={{ backgroundColor: 'white' }}>
-            <Stack direction="row" spacing={2} px={45} py={0.75}>
-                <img src={image} height="40" width="130" />
-                <SearchBar />
-            </Stack>
+        <Box height={50} display="flex">
+            <Paper sx={{ width: '100vw' }}>
+                <Container maxWidth="lg">
+                    <Stack direction="row" spacing={25}>
+                        <Stack direction="row" spacing={2} alignItems="center">
+                            <Stack paddingTop={0.5}>
+                                <img src={image} height="35" width="110" />
+                            </Stack>
+                            <SearchBar />
+                        </Stack>
+                        <Stack paddingTop={0.5}>
+                            <NavigationBarTabs />
+                        </Stack>
+                    </Stack>
+                </Container>
+            </Paper>
         </Box>
     )
 }

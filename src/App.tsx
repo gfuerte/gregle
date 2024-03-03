@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react'
 import { NavigationBar } from './widgets/nav/NavigationBar'
 
+import Container from '@mui/material/Container'
+
 import Box from '@mui/material/Box'
 
 function App() {
