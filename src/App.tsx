@@ -1,5 +1,5 @@
 import React from 'react'
-import { HashRouter as Router, Navigate, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom'
 import { FriendsPage } from './widgets/friends/FriendsPage'
 import { HomePage } from './widgets/home/HomePage'
 import { MessagesPage } from './widgets/messages/MessagesPage'
