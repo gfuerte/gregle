@@ -1,7 +1,8 @@
-import React, { Fragment } from 'react'
+import React from 'react'
+import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom'
+import { FriendsPage } from './widgets/friends/FriendsPage'
+import { HomePage } from './widgets/home/HomePage'
 import { NavigationBar } from './widgets/nav/NavigationBar'
-
-import Container from '@mui/material/Container'
 
 import Box from '@mui/material/Box'
 
@@ -14,7 +15,14 @@ function App() {
                 backgroundColor: '#F4F2EE',
             }}
         >
-            <NavigationBar />
+            <Router basename="/gregle">
+                <NavigationBar />
+                <Routes>
+                    <Route path="/home" element={<HomePage />} />
+                    <Route path="/friends" element={<FriendsPage />} />
+                    <Route path="/*" element={<Navigate to="/home" />} />
+                </Routes>
+            </Router>
         </Box>
     )
 }

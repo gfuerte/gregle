@@ -1,18 +1,24 @@
 import * as React from 'react'
-import Tabs from '@mui/material/Tabs'
-import Tab from '@mui/material/Tab'
-import Box from '@mui/material/Box'
+import { useNavigate } from 'react-router-dom'
 
 import Avatar from '@mui/material/Avatar'
+import Box from '@mui/material/Box'
 import HomeIcon from '@mui/icons-material/Home'
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt'
+import Tab from '@mui/material/Tab'
+import Tabs from '@mui/material/Tabs'
 import TextsmsIcon from '@mui/icons-material/Textsms'
 
-export const NavigationBarTabs = () => {
-    const [value, setValue] = React.useState('one')
+import Button from '@mui/material/Button'
 
-    const handleChange = (event: React.SyntheticEvent, newValue: string) => {
-        setValue(newValue)
+export const NavigationBarTabs = () => {
+    const navigate = useNavigate()
+    const [currentTab, setCurrentTab] = React.useState('home')
+
+    const handleTabChange = (event: React.SyntheticEvent, newValue: string) => {
+        setCurrentTab(newValue)
+        const newPath = `/${newValue}`
+        navigate(newPath)
     }
 
     const tabSx = {
@@ -23,10 +29,10 @@ export const NavigationBarTabs = () => {
 
     return (
         <Box>
-            <Tabs value={value} onChange={handleChange} aria-label="wrapped label tabs example">
-                <Tab icon={<HomeIcon />} label="Home" sx={tabSx} />
-                <Tab icon={<PeopleAltIcon />} label="Friends" sx={tabSx} />
-                <Tab icon={<TextsmsIcon />} label="Messages" sx={tabSx} />
+            <Tabs value={currentTab} onChange={handleTabChange} aria-label="wrapped label tabs example">
+                <Tab icon={<HomeIcon />} label="Home" value="home" sx={tabSx} />
+                <Tab icon={<PeopleAltIcon />} label="Friends" value="friends" sx={tabSx} />
+                <Tab icon={<TextsmsIcon />} label="Messages" value="messages" sx={tabSx} />
                 <Tab
                     icon={
                         <Avatar alt="Remy Sharp" sx={{ width: 24, height: 24, bgcolor: 'blue' }}>
@@ -34,6 +40,7 @@ export const NavigationBarTabs = () => {
                         </Avatar>
                     }
                     label="Me"
+                    value="me"
                     sx={tabSx}
                 />
             </Tabs>

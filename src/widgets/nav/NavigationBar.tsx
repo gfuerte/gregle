@@ -1,12 +1,12 @@
 import React from 'react'
 import image from '../../assets/gregle.png'
+import { NavigationBarTabs } from './tabs/NavigationBarTabs'
 import { SearchBar } from './search-bar/SearchBar'
 
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import Paper from '@mui/material/Paper'
 import Stack from '@mui/material/Stack'
-import { NavigationBarTabs } from './tabs/NavigationBarTabs'
 
 export const NavigationBar = () => {
     return (
