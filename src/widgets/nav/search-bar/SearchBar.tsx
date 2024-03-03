@@ -2,30 +2,37 @@ import * as React from 'react'
 
 import Autocomplete from '@mui/material/Autocomplete'
 import InputAdornment from '@mui/material/InputAdornment'
-import Stack from '@mui/material/Stack'
 import SearchIcon from '@mui/icons-material/Search'
+import Stack from '@mui/material/Stack'
 import TextField from '@mui/material/TextField'
 
 export const SearchBar = () => {
     return (
         <Stack sx={{ width: 300 }}>
             <Autocomplete
-                freeSolo
-                options={top100Films.map(option => option.title)}
-                renderInput={params => (
-                    <TextField
-                        {...params}
-                        placeholder="Search"
-                        InputProps={{
-                            startAdornment: (
-                                <InputAdornment position="start">
-                                    <SearchIcon />
-                                </InputAdornment>
-                            ),
-                        }}
-                    />
-                )}
+                options={top100Films}
+                getOptionLabel={option => option.title}
                 size="small"
+                renderInput={params => {
+                    return (
+                        <TextField
+                            {...params}
+                            placeholder="Search"
+                            fullWidth
+                            InputProps={{
+                                ...params.InputProps,
+                                startAdornment: (
+                                    <>
+                                        <InputAdornment position="start">
+                                            <SearchIcon />
+                                        </InputAdornment>
+                                        {params.InputProps.startAdornment}
+                                    </>
+                                ),
+                            }}
+                        />
+                    )
+                }}
             />
         </Stack>
     )
