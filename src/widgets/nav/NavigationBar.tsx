@@ -1,5 +1,4 @@
 import React from 'react'
-import image from '../../assets/gregle.png'
 import { NavigationBarTabs } from './tabs/NavigationBarTabs'
 import { SearchBar } from './search-bar/SearchBar'
 
