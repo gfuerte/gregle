@@ -23,7 +23,7 @@ export const AboutWidget = () => {
         >
             <Stack maxWidth={200} direction="column" py={1}>
                 <Stack alignItems="center">
-                    <Avatar sx={{ width: 64, height: 64, bgcolor: 'blue', border: '2px solid white' }}>G</Avatar>
+                    <Avatar sx={{ width: 64, height: 64, bgcolor: 'blue', border: '3px solid white' }}>G</Avatar>
                     <h3 style={{ fontWeight: '550', marginBottom: 0 }}>Greg Greg Greg</h3>
                     <p style={{ fontSize: '12px' }}>Relation to Greg</p>
                 </Stack>

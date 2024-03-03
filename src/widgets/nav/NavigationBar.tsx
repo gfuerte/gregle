@@ -7,6 +7,7 @@ import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import Paper from '@mui/material/Paper'
 import Stack from '@mui/material/Stack'
+import { LogoButton } from './logo/LogoButton'
 
 export const NavigationBar = () => {
     return (
@@ -15,9 +16,7 @@ export const NavigationBar = () => {
                 <Container maxWidth="lg">
                     <Stack direction="row" spacing={25}>
                         <Stack direction="row" spacing={2} alignItems="center">
-                            <Stack paddingTop={0.5}>
-                                <img src={image} height="35" width="110" />
-                            </Stack>
+                            <LogoButton />
                             <SearchBar />
                         </Stack>
                         <Stack paddingTop={0.5}>
