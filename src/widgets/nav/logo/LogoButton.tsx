@@ -15,7 +15,7 @@ export const LogoButton = () => {
     return (
         <Stack>
             <Button sx={{ width: '100%', height: '100%' }} onClick={handleButtonClick}>
-                <img src={image} height="35" width="110" />
+                <img src={image} alt="Gregle logo" height="35" width="110" />
             </Button>
         </Stack>
     )

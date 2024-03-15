@@ -13,7 +13,7 @@ export const AboutWidget = () => {
             component="section"
             sx={{
                 p: 2,
-                borderRadius: 1,
+                borderRadius: 2,
                 border: '1px solid lightgrey',
                 backgroundColor: 'white',
                 backgroundImage: `url("${image}")`,
@@ -23,7 +23,9 @@ export const AboutWidget = () => {
         >
             <Stack maxWidth={200} direction="column" py={1}>
                 <Stack alignItems="center">
-                    <Avatar sx={{ width: 64, height: 64, bgcolor: 'blue', border: '3px solid white' }}>G</Avatar>
+                    <Avatar alt="Gregle Avatar" sx={{ width: 64, height: 64, bgcolor: 'blue', border: '3px solid white' }}>
+                        G
+                    </Avatar>
                     <h3 style={{ fontWeight: '550', marginBottom: 0 }}>Greg Greg Greg</h3>
                     <p style={{ fontSize: '12px' }}>Relation to Greg</p>
                 </Stack>
@@ -38,7 +40,7 @@ export const AboutWidget = () => {
                         <p style={{ fontSize: '12px' }}>14</p>
                     </Stack>
                     <Stack direction="row" justifyContent="space-between">
-                        <p style={{ fontSize: '12px' }}>Number of Greg Its:</p>
+                        <p style={{ fontSize: '12px' }}>Number of Greg-Its:</p>
                         <p style={{ fontSize: '12px' }}>15</p>
                     </Stack>
                 </Stack>

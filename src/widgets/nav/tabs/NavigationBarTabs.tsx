@@ -24,7 +24,8 @@ export const NavigationBarTabs = () => {
     const tabSx = {
         minHeight: '20px',
         padding: '0',
-        fontSize: '10px',
+        fontSize: '12px',
+        textTransform: 'none',
     }
 
     return (
@@ -35,7 +36,7 @@ export const NavigationBarTabs = () => {
                 <Tab icon={<TextsmsIcon />} label="Messages" value="messages" sx={tabSx} />
                 <Tab
                     icon={
-                        <Avatar alt="Remy Sharp" sx={{ width: 24, height: 24, bgcolor: 'blue' }}>
+                        <Avatar alt="Gregle Avatar" sx={{ width: 24, height: 24, bgcolor: 'blue' }}>
                             G
                         </Avatar>
                     }
