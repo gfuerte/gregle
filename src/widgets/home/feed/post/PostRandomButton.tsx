@@ -1,13 +1,22 @@
-import React, { useCallback } from 'react'
-import { IconButtonText } from './PostWidget'
+import React, { useCallback, useContext } from 'react'
+import { IconButtonText, PostWidgetContext } from './PostWidget'
 
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh'
 import Button from '@mui/material/Button'
 
 export const PostRandomButton = () => {
+    const { setPostWidgetState } = useContext(PostWidgetContext)
+
     const onPostRandomClick = useCallback(() => {
-        console.log('post random')
-    }, [])
+        const randomText = `It's a long, long way from Ba Sing Se! But the Girls in the City they look so Pretty!!`
+
+        setPostWidgetState!(prevState => ({
+            ...prevState,
+            initialText: randomText,
+            postText: randomText,
+            openModal: true,
+        }))
+    }, [setPostWidgetState])
 
     return (
         <Button onClick={onPostRandomClick} startIcon={<AutoFixHighIcon />} sx={{ textTransform: 'none', color: '#f2b21b' }}>
