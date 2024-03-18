@@ -11,7 +11,7 @@ import { LogoButton } from './logo/LogoButton'
 export const NavigationBar = () => {
     return (
         <Box height={50} display="flex">
-            <Paper sx={{ width: '100vw' }}>
+            <Paper sx={{ width: '100vw', overflow: 'auto' }}>
                 <Container maxWidth="lg">
                     <Stack direction="row" spacing={25}>
                         <Stack direction="row" spacing={2} alignItems="center">
