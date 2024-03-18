@@ -10,6 +10,7 @@ import SettingsIcon from '@mui/icons-material/Settings'
 import Tab from '@mui/material/Tab'
 import Tabs from '@mui/material/Tabs'
 import TextsmsIcon from '@mui/icons-material/Textsms'
+import Typography from '@mui/material/Typography'
 
 export const NavigationBarTabs = () => {
     const navigate = useNavigate()
@@ -37,7 +38,7 @@ export const NavigationBarTabs = () => {
                 <Tab
                     icon={
                         <Avatar alt="Gregle Avatar" sx={{ width: 24, height: 24, bgcolor: 'blue' }}>
-                            G
+                            <Typography>G</Typography>
                         </Avatar>
                     }
                     label="Me"

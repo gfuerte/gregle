@@ -1,5 +1,8 @@
-import React, { Fragment, useContext } from 'react'
+import React, { Fragment, useCallback, useContext } from 'react'
+import { format } from 'date-fns'
+import { Post } from '../../../../schema/Post'
 import { PostWidgetContext } from './PostWidget'
+import { FeedPanelContext } from '../FeedPanel'
 import Typewriter from '../../../shared/Typewriter'
 
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh'
@@ -32,9 +35,26 @@ const modalBoxStyle = {
 
 export const PostModal = () => {
     const { postWidgetState, postActions } = useContext(PostWidgetContext)
+    const { addToFeed } = useContext(FeedPanelContext)
     const { openModal, initialText, postText } = postWidgetState
 
     const { openCloseModal, setInitialPostText, setPostText } = postActions
+
+    const onPostButtonClick = useCallback(() => {
+        if (postText) {
+            const today = new Date()
+            const newPost: Post = {
+                creator: 'Greg Greg Greg',
+                date: format(today, 'MM-dd-yyyy HH'),
+                text: postText,
+                likes: 0,
+                comments: [],
+            }
+
+            addToFeed(newPost)
+            openCloseModal()
+        }
+    }, [openCloseModal])
 
     return (
         <Fragment>
@@ -99,7 +119,12 @@ export const PostModal = () => {
                                 </Stack>
                             </Stack>
                             <Stack alignItems="flex-end">
-                                <Button onClick={openCloseModal} disabled={false} variant="contained" sx={{ textTransform: 'none', borderRadius: 3 }}>
+                                <Button
+                                    onClick={onPostButtonClick}
+                                    disabled={!postText || initialText !== ''}
+                                    variant="contained"
+                                    sx={{ textTransform: 'none', borderRadius: 3 }}
+                                >
                                     Post
                                 </Button>
                             </Stack>

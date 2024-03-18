@@ -1,4 +1,5 @@
-import React, { Dispatch, SetStateAction, createContext, useState } from 'react'
+import React, { createContext, useState } from 'react'
+import { PostActionProps, PostWidgetContextProps, PostWidgetStateProps } from '../../../../types/PostWidgetProps'
 import { PostButton } from './PostButton'
 import { PostMediaButton } from './PostMediaButton'
 import { PostModal } from './PostModal'
@@ -8,13 +9,6 @@ import { PostRandomButton } from './PostRandomButton'
 import Avatar from '@mui/material/Avatar'
 import Box from '@mui/material/Box'
 import Stack from '@mui/material/Stack'
-import Typography from '@mui/material/Typography'
-
-interface PostWidgetStateProps {
-    initialText: string
-    postText: string
-    openModal: boolean
-}
 
 const defaultPostWidgetValues: PostWidgetStateProps = {
     initialText: '',
@@ -22,20 +16,10 @@ const defaultPostWidgetValues: PostWidgetStateProps = {
     openModal: false,
 }
 
-const defaultPostActions: {
-    openCloseModal: () => void
-    setInitialPostText: (initialText: string) => void
-    setPostText: (postText: string) => void
-} = {
+const defaultPostActions: PostActionProps = {
     openCloseModal: () => {},
     setInitialPostText: (initialText: string) => {},
     setPostText: (postText: string) => {},
-}
-
-interface PostWidgetContextProps {
-    postWidgetState: PostWidgetStateProps
-    setPostWidgetState?: Dispatch<SetStateAction<PostWidgetStateProps>>
-    postActions: typeof defaultPostActions
 }
 
 export const PostWidgetContext = createContext<PostWidgetContextProps>({
@@ -43,24 +27,13 @@ export const PostWidgetContext = createContext<PostWidgetContextProps>({
     postActions: defaultPostActions,
 })
 
-interface IconButtonTextProps {
-    text: string
-}
-
-export const IconButtonText = ({ text }: IconButtonTextProps): JSX.Element => {
-    return (
-        <Typography fontSize={'0.875rem'} color={'gray'}>
-            {text}
-        </Typography>
-    )
-}
-
 export const PostWidget = () => {
     const [postWidgetState, setPostWidgetState] = useState<PostWidgetStateProps>(defaultPostWidgetValues)
     const openCloseModal = () => {
         setPostWidgetState((prevState: PostWidgetStateProps) => ({
             ...prevState,
             openModal: !postWidgetState.openModal,
+            initialText: postWidgetState.openModal ? '' : postWidgetState.initialText,
             postText: postWidgetState.openModal ? '' : postWidgetState.postText,
         }))
     }

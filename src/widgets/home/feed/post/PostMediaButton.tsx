@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react'
-import { IconButtonText } from './PostWidget'
+import { IconButtonText } from '../../../shared/IconButtonText'
 
 import Button from '@mui/material/Button'
 import CollectionsIcon from '@mui/icons-material/Collections'

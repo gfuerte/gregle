@@ -10,6 +10,7 @@ export const AboutWidget = () => {
     return (
         <Box
             minWidth={200}
+            maxHeight={425}
             component="section"
             sx={{
                 p: 2,

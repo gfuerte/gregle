@@ -1,5 +1,6 @@
 import React, { useCallback, useContext } from 'react'
-import { IconButtonText, PostWidgetContext } from './PostWidget'
+import { PostWidgetContext } from './PostWidget'
+import { IconButtonText } from '../../../shared/IconButtonText'
 
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh'
 import Button from '@mui/material/Button'
