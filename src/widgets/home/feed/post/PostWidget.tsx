@@ -60,7 +60,7 @@ export const PostWidget = () => {
 
     return (
         <PostWidgetContext.Provider value={{ postWidgetState, setPostWidgetState, postActions }}>
-            <Box minWidth={525} component="section" sx={{ p: 1.5, borderRadius: 2, border: '1px solid lightgrey', backgroundColor: 'white' }}>
+            <Box component="section" sx={{ p: 1.5, borderRadius: 2, border: '1px solid lightgrey', backgroundColor: 'white' }}>
                 <Stack direction="column" alignItems="stretch" spacing={1}>
                     <Stack direction="row" spacing={1}>
                         <Avatar alt="Gregle Avatar" sx={{ width: 48, height: 48, bgcolor: 'blue' }}>

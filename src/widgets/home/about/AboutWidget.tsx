@@ -9,7 +9,6 @@ import Divider from '@mui/material/Divider'
 export const AboutWidget = () => {
     return (
         <Box
-            minWidth={200}
             maxHeight={425}
             component="section"
             sx={{
@@ -18,11 +17,11 @@ export const AboutWidget = () => {
                 border: '1px solid lightgrey',
                 backgroundColor: 'white',
                 backgroundImage: `url("${image}")`,
-                backgroundSize: '250px 65px',
+                backgroundSize: '100% 65px',
                 backgroundRepeat: 'no-repeat',
             }}
         >
-            <Stack maxWidth={200} direction="column" py={1}>
+            <Stack width="100%" direction="column" py={1}>
                 <Stack alignItems="center">
                     <Avatar alt="Gregle Avatar" sx={{ width: 64, height: 64, bgcolor: 'blue', border: '3px solid white' }}>
                         G

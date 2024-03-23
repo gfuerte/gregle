@@ -54,7 +54,7 @@ export const PostModal = () => {
             addToFeed(newPost)
             openCloseModal()
         }
-    }, [openCloseModal])
+    }, [openCloseModal, addToFeed, postText])
 
     return (
         <Fragment>

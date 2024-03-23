@@ -41,7 +41,7 @@ export const FeedPost = ({ post }: FeedPostProps) => {
     }
 
     return (
-        <Box minWidth={525} maxWidth={525} component="section" sx={{ p: 2, borderRadius: 2, border: '1px solid lightgrey', backgroundColor: 'white' }}>
+        <Box maxWidth={525} component="section" sx={{ p: 2, borderRadius: 2, border: '1px solid lightgrey', backgroundColor: 'white' }}>
             <Stack direction="column" spacing={2}>
                 <Stack direction="row" justifyContent="space-between" alignItems="center">
                     <Stack direction="row" spacing={1}>
