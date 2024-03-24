@@ -4,7 +4,6 @@ import { FeedPanel } from './feed/FeedPanel'
 import { UpdatesWidget } from './updates/UpdatesWidget'
 
 import Grid from '@mui/material/Grid'
-import Stack from '@mui/material/Stack'
 
 export const HomePage = () => {
     return (
