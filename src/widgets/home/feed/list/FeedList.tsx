@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { FeedPanelContext } from '../FeedPanel'
 import { FeedPost } from './FeedPost'
+import { Post } from '../../../../schema/Post'
 
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'

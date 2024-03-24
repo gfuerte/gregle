@@ -1,10 +1,12 @@
 import React from 'react'
 import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom'
-import { createTheme } from '@mui/material'
+import { createTheme, useMediaQuery } from '@mui/material'
 import { ThemeProvider } from '@emotion/react'
 import { FriendsPage } from './widgets/friends/FriendsPage'
 import { HomePage } from './widgets/home/HomePage'
 import { MessagesPage } from './widgets/messages/MessagesPage'
+import { MobileBottomTabs } from './widgets/nav/tabs/MobileBottomTabs'
+import { MobileNavigationBar } from './widgets/nav/MobileNavigationBar'
 import { NavigationBar } from './widgets/nav/NavigationBar'
 import { ProfilePage } from './widgets/profile/ProfilePage'
 
@@ -17,6 +19,9 @@ const theme = createTheme({
 })
 
 function App() {
+    const isMobile = useMediaQuery('(max-width:600px)')
+    const isTablet = useMediaQuery('(min-width: 600px) and (max-width: 1024px)')
+
     return (
         <ThemeProvider theme={theme}>
             <Box
@@ -28,7 +33,7 @@ function App() {
                 }}
             >
                 <Router basename="/gregle">
-                    <NavigationBar />
+                    {isMobile || isTablet ? <MobileNavigationBar /> : <NavigationBar />}
                     <Routes>
                         <Route path="/home" element={<HomePage />} />
                         <Route path="/friends" element={<FriendsPage />} />
@@ -36,6 +41,7 @@ function App() {
                         <Route path="/me" element={<ProfilePage />} />
                         <Route path="/*" element={<Navigate to="/home" />} />
                     </Routes>
+                    {(isMobile || isTablet) && <MobileBottomTabs />}
                 </Router>
             </Box>
         </ThemeProvider>

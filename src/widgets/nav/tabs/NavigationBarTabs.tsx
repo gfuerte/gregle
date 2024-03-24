@@ -31,7 +31,7 @@ export const NavigationBarTabs = () => {
 
     return (
         <Box>
-            <Tabs value={currentTab} onChange={handleTabChange} aria-label="wrapped label tabs example">
+            <Tabs value={currentTab} onChange={handleTabChange}>
                 <Tab icon={<HomeIcon />} label="Home" value="home" sx={tabSx} />
                 <Tab icon={<PeopleAltIcon />} label="Friends" value="friends" sx={tabSx} />
                 <Tab icon={<TextsmsIcon />} label="Messages" value="messages" sx={tabSx} />

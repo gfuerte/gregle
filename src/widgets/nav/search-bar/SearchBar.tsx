@@ -8,33 +8,31 @@ import TextField from '@mui/material/TextField'
 
 export const SearchBar = () => {
     return (
-        <Stack sx={{ width: 300 }}>
-            <Autocomplete
-                options={top100Films}
-                getOptionLabel={option => option.title}
-                size="small"
-                renderInput={params => {
-                    return (
-                        <TextField
-                            {...params}
-                            placeholder="Search"
-                            fullWidth
-                            InputProps={{
-                                ...params.InputProps,
-                                startAdornment: (
-                                    <>
-                                        <InputAdornment position="start">
-                                            <SearchIcon />
-                                        </InputAdornment>
-                                        {params.InputProps.startAdornment}
-                                    </>
-                                ),
-                            }}
-                        />
-                    )
-                }}
-            />
-        </Stack>
+        <Autocomplete
+            options={top100Films}
+            getOptionLabel={option => option.title}
+            size="small"
+            renderInput={params => {
+                return (
+                    <TextField
+                        {...params}
+                        placeholder="Search"
+                        fullWidth
+                        InputProps={{
+                            ...params.InputProps,
+                            startAdornment: (
+                                <>
+                                    <InputAdornment position="start">
+                                        <SearchIcon />
+                                    </InputAdornment>
+                                    {params.InputProps.startAdornment}
+                                </>
+                            ),
+                        }}
+                    />
+                )
+            }}
+        />
     )
 }
 
